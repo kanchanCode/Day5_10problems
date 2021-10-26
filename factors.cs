@@ -11,41 +11,41 @@ namespace Day5_assignments
         public void factor()
         {
 
-            int n;
-            // int [] result=new int[] { };
-            //int i =1;
+           int n;
+            int isPrime;
+            int i, j;
 
             Console.WriteLine("Enter a number");
             n = Convert.ToInt32(Console.ReadLine());
-            //while (i*i<=n);
 
+            // bcoz 1 is not prime nor composite and 2 is only even prime 
 
-
-
-            for (int i = 1; i <= n; i++)
+            for (i = 3; i*i <= n; i++)
             {
                 if (n % i == 0)
                 {
-                    // result.CopyTo(i,result);
+                    isPrime = 1;
 
-                    Console.WriteLine("Factor of the given number is " + i);
-                    
-                    //  if(n/i != n)
-                    // {
-                    // result.CopyTo(i,result);
-                    //Console.WriteLine("");
-                    //  }
+                    for (j = 2; j<= i/2; j++)
+                    {
+
+                        if (i % j == 0)
+                        {
+                            isPrime = 0;
+                           
+                            break;
+
+                        }
+                    }
+                    if (isPrime == 1)
+                    {
+                        Console.WriteLine("Factor of the given number is " + i);
+                    }
+                   
+
                 }
-                //i++;
 
             }
-
-            // for(int j = 0; j < result; j++)
-            // {
-            //    Console.WriteLine("result is "+result[i]);
-            //  }
-            // }
-
         }
     }
 }
